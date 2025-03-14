@@ -13,58 +13,69 @@ public class DogTest {
      * 3. Anotar la clase con @Test
      * 4. Crear un método de prueba llamado shouldDogGetAdopted
      * 5. Hacer un @BeforeEach para inicializar el objeto Dog
-     * 6. Borrar Dog firulais de cada test
+     * 6. Borrar Dog shiva de cada test
      * 7. Correr los tests
      */
 
-    Dog firulais;
+    Dog shiva;
 
-     @BeforeEach
+    @BeforeEach
     public void setUp(){
-        firulais = new Dog("Firulais", 12, "male", true);
+        shiva = new Dog("Shiva", 5, "male", false);
     }
     
     @Test
     public void shouldDogGetAdopted(){
-        //Dog firulais = new Dog("Firulais", 12, "male", true);
-        String actual = firulais.adopt();
-        assertEquals(actual, "Firulais has been adopted!");
+        //ARRANGE
+        //Dog shiva = new Dog("Shiva", 5, "male", true); reemplazado por @BeforeEach
+        //ACT
+        String result = shiva.adopt();
+        //ASSERT
+        assertEquals(result, "Shiva has been adopted!");
     }
 
     @Test
     public void shouldDogCannotBeAdoptedTwice(){
-        //Dog firulais = new Dog("Firulais", 12, "male", true);
-        firulais.adopt();
-        String actual = firulais.adopt();
-        assertEquals(actual, "Firulais is already adopted");
+        //Dog shiva = new Dog("Shiva", 5, "male", true);
+        shiva.adopt();
+        String result = shiva.adopt();
+        assertEquals(result, "Shiva is already adopted");
     }
 
     @Test
     public void shouldMaleDogCannotGaveBirth(){
-        //Dog firulais = new Dog("Firulais",12, "male", true);
-        String actual = firulais.gaveBirth(3);
-        assertEquals(actual, "Male dogs cannot give birth");
+        //Dog shiva = new Dog("Shiva", 5, "male", true);
+        String result = shiva.gaveBirth(3);
+        assertEquals(result, "Male dogs cannot give birth");
+    }
+
+    @Test
+    public void shouldMaleDogCannotGiveBirth(){
+        //Dog shiva = new Dog("Shiva", 5, "male", true);
+        String result = shiva.gaveBirth(3);
+        //ASSERT
+        assertEquals(result, "Male dogs cannot give birth");
     }
 
     @Test
     public void shouldFemaleDogGaveBirth(){
-        Dog lila = new Dog("Lila",12, "female", true);
-        String actual = lila.gaveBirth(3);
-        assertEquals(actual, "Lila has 3 puppies.");
+        Dog luna = new Dog("Luna",12, "female", true);
+        String result = luna.gaveBirth(10);
+        assertEquals(result, "Luna has 10 puppies.");
     }
 
     @Test
     public void shouldDogCantReceiveGiftIfIsNotBeenAdopted(){
-        //Dog firulais = new Dog("Firulais",12, "male", true);
-        String actual = firulais.giveGift();
-        assertEquals(actual, "You must be adopted before the gift");
+        //Dog shiva = new Dog("Shiva", 5, "male", true);
+        String result = shiva.giveGift();
+        assertEquals(result, "Shiva must get adopted before gift");
     }
 
     @Test
     public void shouldDogReceiveGift(){
-        //Dog firulais = new Dog("Firulais",12, "male", true);
-        firulais.adopt();
-        String actual = firulais.giveGift();
-        assertEquals(actual, "Firulais received a toy and a bone");
+        //Dog shiva = new Dog("Shiva", 5, "male", true);
+        shiva.adopt();
+        String result = shiva.giveGift();
+        assertEquals(result, "Shiva received a toy and a bone");
     }
 }

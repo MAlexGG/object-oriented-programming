@@ -28,7 +28,7 @@ public class Dog extends Pet implements Gift {
     @Override
     public String giveGift() {
         if(!getIsAdopted()){
-         return "You must be adopted before the gift";   
+         return getName() + " must get adopted before gift";   
         }
         return getName() + " received a toy and a bone";
     }
