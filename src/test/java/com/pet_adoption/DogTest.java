@@ -31,7 +31,7 @@ public class DogTest {
         //ACT
         String result = shiva.adopt();
         //ASSERT
-        assertEquals(result, "Shiva has been adopted!");
+        assertEquals("Shiva has been adopted!", result);
     }
 
     @Test
@@ -39,14 +39,14 @@ public class DogTest {
         //Dog shiva = new Dog("Shiva", 5, "male", true);
         shiva.adopt();
         String result = shiva.adopt();
-        assertEquals(result, "Shiva is already adopted");
+        assertEquals("Shiva is already adopted", result);
     }
 
     @Test
     public void shouldMaleDogCannotGaveBirth(){
         //Dog shiva = new Dog("Shiva", 5, "male", true);
         String result = shiva.gaveBirth(3);
-        assertEquals(result, "Male dogs cannot give birth");
+        assertEquals("Male dogs cannot give birth", result);
     }
 
     @Test
@@ -54,21 +54,21 @@ public class DogTest {
         //Dog shiva = new Dog("Shiva", 5, "male", true);
         String result = shiva.gaveBirth(3);
         //ASSERT
-        assertEquals(result, "Male dogs cannot give birth");
+        assertEquals("Male dogs cannot give birth", result);
     }
 
     @Test
     public void shouldFemaleDogGaveBirth(){
         Dog luna = new Dog("Luna",12, "female", true);
         String result = luna.gaveBirth(10);
-        assertEquals(result, "Luna has 10 puppies.");
+        assertEquals("Luna has 10 puppies.", result);
     }
 
     @Test
     public void shouldDogCantReceiveGiftIfIsNotBeenAdopted(){
         //Dog shiva = new Dog("Shiva", 5, "male", true);
         String result = shiva.giveGift();
-        assertEquals(result, "Shiva must get adopted before gift");
+        assertEquals("Shiva must get adopted before gift", result);
     }
 
     @Test
@@ -76,6 +76,6 @@ public class DogTest {
         //Dog shiva = new Dog("Shiva", 5, "male", true);
         shiva.adopt();
         String result = shiva.giveGift();
-        assertEquals(result, "Shiva received a toy and a bone");
+        assertEquals("Shiva received a toy and a bone", result);
     }
 }
